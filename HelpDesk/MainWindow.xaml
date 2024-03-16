@@ -1,0 +1,94 @@
+﻿<Window x:Class="HelpDesk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpDesk"
+        mc:Ignorable="d"
+        Height="600" Width="1100" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+
+    <Window.Resources>
+        <Style TargetType="Label" x:Key="HighlightLabelStyle">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#FFE7E7E9"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Margin" Value="41,95,621,312"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#FF22202F"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF7B56BD" Offset="0.016"/>
+            <GradientStop Color="#FF2F204A" Offset="1"/>
+            <GradientStop Color="#FF6E38D0" Offset="0.426"/>
+        </LinearGradientBrush>
+    </Window.Background>
+
+
+
+
+
+
+    <Grid Margin="0,0,10,0">
+        <Image Margin="1022,10,25,562" MouseDown="Close_Click" Cursor="Hand" Source="/Photo/крест.png" />
+        <Border Height="Auto" Name="windowFrame"
+              BorderBrush="#395984"
+              BorderThickness="1"
+              CornerRadius="160,0,0,160" Margin="896,-27,52,-97" RenderTransformOrigin="0.5,0.5" Background="#FFFBF6FD" >
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-148.325"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+
+        </Border>
+        <Border Height="Auto" x:Name="windowFrame_Copy"
+            BorderBrush="#395984"
+            BorderThickness="1"
+            CornerRadius="160,0,0,160" Margin="-4,332,952,-212" RenderTransformOrigin="0.5,0.5" Background="#FFFBF6FD" >
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-58.214"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+
+        </Border>
+        <Label Margin="20,22,944,533" Content="HelpDesk" FontSize="22" Foreground="#FFE7E7E9" FontFamily="Rockwell" />
+        <Label Margin="167,26,746,538" Content="ТЕХНОТЕЛЬ" FontSize="18" Foreground="#FFE7E7E9" FontFamily="SimSun" RenderTransformOrigin="0.5,0.5" >
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-3.366"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.941"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,130,875,412" BorderBrush="Transparent" Background="Transparent" Content="Услуги" FontSize="20" Foreground="#FFE7E7E9" MouseDown="Yslyga_Click" />
+        <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,374,875,161" BorderBrush="Transparent" Background="Transparent" Content="Онлайн чат" FontSize="20" Foreground="#FFE7E7E9" />
+        <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,209,875,333" BorderBrush="Transparent" Background="Transparent" Content="Создать обращение" FontSize="18" Foreground="#FFE7E7E9" />
+        <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,300,875,242" BorderBrush="Transparent" Background="Transparent" Content="Личный кабинет" FontSize="18" Foreground="#FFE7E7E9" MouseDown="Cabinet_Click" />
+
+
+    </Grid>
+</Window>

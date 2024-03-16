@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище HelpDeskModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Обращение">
+    <Key>
+      <PropertyRef Name="Id_Обращение" />
+    </Key>
+    <Property Name="Id_Обращение" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="20" />
+    <Property Name="Сообщение" Type="nvarchar(max)" />
+    <Property Name="Номер" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Пользователь">
+    <Key>
+      <PropertyRef Name="Id_Пользователь" />
+    </Key>
+    <Property Name="Id_Пользователь" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Логин" Type="nvarchar" MaxLength="50" />
+    <Property Name="Пароль" Type="nvarchar" MaxLength="50" />
+    <Property Name="Тип" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Тип пользователя">
+    <Key>
+      <PropertyRef Name="Id_Тип" />
+    </Key>
+    <Property Name="Id_Тип" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="Услуги">
+    <Key>
+      <PropertyRef Name="Id_Услуги" />
+    </Key>
+    <Property Name="Id_Услуги" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="60" />
+    <Property Name="Стоимость" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Описание" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_Пользователь_Тип пользователя">
+    <End Role="Тип пользователя" Type="Self.Тип пользователя" Multiplicity="0..1" />
+    <End Role="Пользователь" Type="Self.Пользователь" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип пользователя">
+        <PropertyRef Name="Id_Тип" />
+      </Principal>
+      <Dependent Role="Пользователь">
+        <PropertyRef Name="Тип" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище HelpDeskModelContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Обращение" EntityType="Self.Обращение" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Пользователь" EntityType="Self.Пользователь" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Тип пользователя" EntityType="Self.Тип пользователя" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Услуги" EntityType="Self.Услуги" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Пользователь_Тип пользователя" Association="Self.FK_Пользователь_Тип пользователя">
+      <End Role="Тип пользователя" EntitySet="Тип пользователя" />
+      <End Role="Пользователь" EntitySet="Пользователь" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
