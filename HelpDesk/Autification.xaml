@@ -1,0 +1,259 @@
+﻿<Window x:Class="HelpDesk.Autification"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HelpDesk"
+      mc:Ignorable="d" 
+      Height="600" Width="1100"
+      Title="Authentication" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="RoundButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                        <!-- Увеличиваем масштаб на 10% -->
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400"/>
+        </Grid.RowDefinitions>
+        <!-- Ваш контент здесь -->
+        <Grid x:Name="Sign_Up" Margin="582,10,0,-180" Grid.RowSpan="1" Visibility="Visible" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Height="Auto" Name="windowFrame"
+              BorderBrush="#395984"
+              BorderThickness="1"
+              CornerRadius="160,0,0,160" Grid.ColumnSpan="2" Margin="0,-12,0,-20" >
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7B56BD" Offset="0.016"/>
+                        <GradientStop Color="#FF2F204A" Offset="1"/>
+                        <GradientStop Color="#FF6E38D0" Offset="0.426"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Label Content="Hello, Friend!"  FontSize="40" Grid.ColumnSpan="2" Margin="130,141,110,373" RenderTransformOrigin="0.5,0.5" Foreground="#FFFBF6FD" FontFamily="Arial Rounded MT Bold">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.573"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.49"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label  Grid.ColumnSpan="2" Margin="82,226,0,285" FontSize="21" Content="Register with your personal details to use all &#xA;&#x9;of application features" Foreground="#FFD7CDFF" FontFamily="Bahnschrift"/>
+
+            <Button Cursor="Hand" Click="SignUp_Click" Style="{StaticResource RoundButtonStyle}"  FontSize="17" Content="SIGN UP" Background="Transparent"  Grid.ColumnSpan="2" Margin="164,330,156,192" BorderBrush="#FF7A74BC" Foreground="#FFE1DAFA" FontFamily="Arial"/>
+
+        </Grid>
+
+        <Grid x:Name="Sign_In" Margin="0,0,523,-200" Visibility="Visible">
+            <Label Margin="195,90,226,446" Content="Sign In" FontSize="40" FontFamily="Arial Rounded MT Bold"/>
+            <Label Content="We greet you! Please login and password" Margin="76,196,101,367" FontSize="21"  FontFamily="Bahnschrift" Foreground="#FFA6A6A6"/>
+            <TextBox x:Name="Login" Margin="104,256,139,0"  FontSize="22" VerticalAlignment="Top" Height="56" Text="" FontFamily="Arial">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="#FFEDEDED" CornerRadius="15" Padding="20,15,0,0">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="True"/>
+                                <TextBlock Text="Login" FontSize="24" VerticalAlignment="Top" Foreground="#FF989898" Margin="0,0,10,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <PasswordBox x:Name="Password" Margin="104,366,139,0" FontSize="22" VerticalAlignment="Top" Height="56" Password="">
+                <PasswordBox.Template>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="#FFEDEDED" CornerRadius="15" Padding="20,15,0,0">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="True"/>
+                                <TextBlock Text="Password" FontSize="24" VerticalAlignment="Top" Foreground="#FF989898" Margin="0,0,10,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Password.Length, RelativeSource={RelativeSource AncestorType=PasswordBox}}" Value="0">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </PasswordBox.Template>
+            </PasswordBox>
+
+            <Button Cursor="Hand"  Style="{StaticResource RoundButtonStyle}"  FontSize="17" Content="SIGN IN"  Margin="177,474,226,75" Foreground="#FFFBF6FD" FontFamily="Arial" Background="#FF774CC3" Click="Input_Click"/>
+
+        </Grid>
+
+        <Grid x:Name="Registration" Margin="0,0,10,-200" Visibility="Hidden" >
+
+            <Label Margin="655,63,118,473" Content="Create Account" FontSize="40" FontFamily="Arial Rounded MT Bold"/>
+            <Label Content="of use your email for registration  " Margin="655,159,118,404" FontSize="18"  FontFamily="Bahnschrift" Foreground="#FFA6A6A6"/>
+            <TextBox x:Name="RegLogin" Margin="606,202,70,0"  FontSize="22" VerticalAlignment="Top" Height="56" Text="" FontFamily="Arial">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="#FFEDEDED" CornerRadius="15" Padding="20,15,0,0">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="True"/>
+                                <TextBlock Text="Login" FontSize="22" VerticalAlignment="Top" Foreground="#FF989898" Margin="0,0,10,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+            <TextBox x:Name="RegEmail" Margin="606,282,70,0"  FontSize="22" VerticalAlignment="Top" Height="56" Text="" FontFamily="Arial">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="#FFEDEDED" CornerRadius="15" Padding="20,15,0,0">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="True"/>
+                                <TextBlock Text="Email" FontSize="22" VerticalAlignment="Top" Foreground="#FF989898" Margin="0,0,10,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource AncestorType=TextBox}}" Value="">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+
+
+            <PasswordBox x:Name="RegPassword" Margin="606,363,70,0" FontSize="22" VerticalAlignment="Top" Height="56" Password="">
+                <PasswordBox.Template>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Border Background="#FFEDEDED" CornerRadius="15" Padding="20,15,0,0">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="True"/>
+                                <TextBlock Text="Password" FontSize="22" VerticalAlignment="Top" Foreground="#FF989898" Margin="0,0,10,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Password.Length, RelativeSource={RelativeSource AncestorType=PasswordBox}}" Value="0">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </PasswordBox.Template>
+            </PasswordBox>
+
+            <Button Cursor="Hand"  Style="{StaticResource RoundButtonStyle}"  FontSize="17" Content="SIGN UP" Background="#FF6735C0" Margin="752,451,158,98" BorderBrush="#FF7A74BC"  FontFamily="Arial" Click="Reg_Click"/>
+
+            <Border Height="Auto" Name="windowFrame2"
+              BorderBrush="#395984"
+              BorderThickness="1"
+              CornerRadius="160,0,0,160" Margin="-6,-24,602,-8" RenderTransformOrigin="0.5,0.5" >
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-180.272"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF7B56BD" Offset="0.016"/>
+                        <GradientStop Color="#FF2F204A" Offset="1"/>
+                        <GradientStop Color="#FF6E38D0" Offset="0.426"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <Label Content="Welcome Back!"  FontSize="40" Margin="82,172,693,342" RenderTransformOrigin="0.5,0.5" Foreground="#FFFBF6FD" FontFamily="Arial Rounded MT Bold">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-0.573"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="-0.49"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label Margin="40,266,674,271" FontSize="21" Content="Enter your personal information to use all the &#xD;&#xA;&#x9;features of the application" Foreground="#FFD7CDFF" FontFamily="Bahnschrift" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0.845"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0.656"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Button Cursor="Hand" Style="{StaticResource RoundButtonStyle}"  FontSize="17" Content="SIGN IN" Background="Transparent" Margin="125,363,773,193" BorderBrush="#FF7A74BC" Foreground="#FFE1DAFA" FontFamily="Arial" Click="Back_SignIn_Click"/>
+
+
+        </Grid>
+    </Grid>
+
+</Window>

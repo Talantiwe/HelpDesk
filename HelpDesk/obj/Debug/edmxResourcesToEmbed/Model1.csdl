@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDeskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Обращение">
+    <Key>
+      <PropertyRef Name="Id_Обращение" />
+    </Key>
+    <Property Name="Id_Обращение" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Сообщение" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Номер" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Статус" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Пользователь">
+    <Key>
+      <PropertyRef Name="Id_Пользователь" />
+    </Key>
+    <Property Name="Id_Пользователь" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Тип" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Тип_пользователя" Relationship="Self.FK_Пользователь_Тип_пользователя" FromRole="Пользователь" ToRole="Тип_пользователя" />
+  </EntityType>
+  <EntityType Name="Тип_пользователя">
+    <Key>
+      <PropertyRef Name="Id_Тип" />
+    </Key>
+    <Property Name="Id_Тип" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Пользователь" Relationship="Self.FK_Пользователь_Тип_пользователя" FromRole="Тип_пользователя" ToRole="Пользователь" />
+  </EntityType>
+  <EntityType Name="Услуги">
+    <Key>
+      <PropertyRef Name="Id_Услуги" />
+    </Key>
+    <Property Name="Id_Услуги" Type="Int32" Nullable="false" />
+    <Property Name="Наименование" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="Стоимость" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Описание" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_Пользователь_Тип_пользователя">
+    <End Role="Тип_пользователя" Type="Self.Тип_пользователя" Multiplicity="0..1" />
+    <End Role="Пользователь" Type="Self.Пользователь" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Тип_пользователя">
+        <PropertyRef Name="Id_Тип" />
+      </Principal>
+      <Dependent Role="Пользователь">
+        <PropertyRef Name="Тип" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HelpDeskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Обращение" EntityType="Self.Обращение" />
+    <EntitySet Name="Пользователь" EntityType="Self.Пользователь" />
+    <EntitySet Name="Тип_пользователя" EntityType="Self.Тип_пользователя" />
+    <EntitySet Name="Услуги" EntityType="Self.Услуги" />
+    <AssociationSet Name="FK_Пользователь_Тип_пользователя" Association="Self.FK_Пользователь_Тип_пользователя">
+      <End Role="Тип_пользователя" EntitySet="Тип_пользователя" />
+      <End Role="Пользователь" EntitySet="Пользователь" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
