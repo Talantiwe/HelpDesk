@@ -6,14 +6,24 @@
         xmlns:local="clr-namespace:HelpDesk"
         mc:Ignorable="d"
         Height="600" Width="1100" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+<<<<<<< HEAD
     <Grid>
+=======
+    <Grid Cursor="Hand">
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
         <Image Margin="32,9,1012,548" Cursor="Hand" Source="/Photo/Back.png" MouseDown="Back_Click" />
         <Image Margin="656,278,388,278" Cursor="Hand"  MouseDown="Red_Click" Source="/Photo/pngwing.com.png" />
         <Image x:Name="Galka" Visibility="Hidden" Margin="722,278,322,278"  MouseDown="Red_Click" Source="/Photo/галочка.png" />
         <Label Margin="186,150,793,399" Content="Логин" FontSize="28" FontFamily="Arial Black" />
+<<<<<<< HEAD
         <TextBlock Padding="5,0,0,0" Cursor="Hand" x:Name="Login" FontSize="28" Margin="349,151,476,399" Background="#FFEDEDED" Foreground="#FF989898"/>
         <Label Margin="186,269,793,280" Content="Email" FontSize="28" FontFamily="Arial Black" />
         <TextBox Padding="5,0,0,0"  Cursor="Hand" BorderBrush="Transparent" x:Name="Email" FontSize="28" Margin="349,274,476,280" Background="#FFEDEDED" Foreground="#FF989898"/>
+=======
+        <TextBlock  x:Name="Login" FontSize="28" Margin="349,151,476,399" Background="#FFEDEDED" Foreground="#FF989898"/>
+        <Label Margin="186,269,793,280" Content="Email" FontSize="28" FontFamily="Arial Black" />
+        <TextBox BorderBrush="Transparent" x:Name="Email" FontSize="28" Margin="349,274,476,280" Background="#FFEDEDED" Foreground="#FF989898"/>
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
         <Path Fill="#FF6E38D0"  StrokeThickness="1" Margin="794,22,6,426" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Path.RenderTransform>
                 <TransformGroup>

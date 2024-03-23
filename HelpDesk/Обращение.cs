@@ -18,6 +18,9 @@ namespace HelpDesk
         public string Наименование { get; set; }
         public string Сообщение { get; set; }
         public string Номер { get; set; }
+<<<<<<< HEAD
         public string Статус { get; set; }
+=======
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
     }
 }

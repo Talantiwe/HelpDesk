@@ -15,10 +15,16 @@
       <PropertyRef Name="Id_Обращение" />
     </Key>
     <Property Name="Id_Обращение" Type="Int32" Nullable="false" />
+<<<<<<< HEAD
     <Property Name="Наименование" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="Сообщение" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Номер" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="Статус" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+=======
+    <Property Name="Наименование" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Сообщение" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Номер" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
   </EntityType>
   <EntityType Name="Пользователь">
     <Key>

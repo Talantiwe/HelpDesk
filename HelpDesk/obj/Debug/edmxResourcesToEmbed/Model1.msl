@@ -15,7 +15,10 @@
     <EntitySetMapping Name="Обращение">
       <EntityTypeMapping TypeName="HelpDeskModel.Обращение">
         <MappingFragment StoreEntitySet="Обращение">
+<<<<<<< HEAD
           <ScalarProperty Name="Статус" ColumnName="Статус" />
+=======
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
           <ScalarProperty Name="Id_Обращение" ColumnName="Id_Обращение" />
           <ScalarProperty Name="Наименование" ColumnName="Наименование" />
           <ScalarProperty Name="Сообщение" ColumnName="Сообщение" />

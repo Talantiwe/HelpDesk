@@ -44,11 +44,14 @@ namespace HelpDesk
             Cabinet cabinet = new Cabinet(user);
             cabinet.Show();
         }
+<<<<<<< HEAD
 
         private void CreateObr_Click(object sender, MouseButtonEventArgs e)
         {
             CreateRequests createRequests = new CreateRequests(user);
             createRequests.Show();
         }
+=======
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
     }
 }

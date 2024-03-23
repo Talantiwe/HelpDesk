@@ -14,11 +14,18 @@
     <Key>
       <PropertyRef Name="Id_Обращение" />
     </Key>
+<<<<<<< HEAD
     <Property Name="Id_Обращение" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Наименование" Type="nvarchar" MaxLength="60" />
     <Property Name="Сообщение" Type="nvarchar(max)" />
     <Property Name="Номер" Type="nvarchar" MaxLength="10" />
     <Property Name="Статус" Type="nvarchar" MaxLength="30" />
+=======
+    <Property Name="Id_Обращение" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="20" />
+    <Property Name="Сообщение" Type="nvarchar(max)" />
+    <Property Name="Номер" Type="nvarchar" MaxLength="10" />
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
   </EntityType>
   <EntityType Name="Пользователь">
     <Key>

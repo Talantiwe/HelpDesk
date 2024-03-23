@@ -86,7 +86,11 @@
         </Label>
         <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,130,875,412" BorderBrush="Transparent" Background="Transparent" Content="Услуги" FontSize="20" Foreground="#FFE7E7E9" MouseDown="Yslyga_Click" />
         <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,374,875,161" BorderBrush="Transparent" Background="Transparent" Content="Онлайн чат" FontSize="20" Foreground="#FFE7E7E9" />
+<<<<<<< HEAD
         <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,209,875,333" BorderBrush="Transparent" Background="Transparent" Content="Создать обращение" FontSize="18" Foreground="#FFE7E7E9" MouseDown="CreateObr_Click" />
+=======
+        <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,209,875,333" BorderBrush="Transparent" Background="Transparent" Content="Создать обращение" FontSize="18" Foreground="#FFE7E7E9" />
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
         <Label Cursor="Hand" Style="{StaticResource HighlightLabelStyle}" Margin="0,300,875,242" BorderBrush="Transparent" Background="Transparent" Content="Личный кабинет" FontSize="18" Foreground="#FFE7E7E9" MouseDown="Cabinet_Click" />
 
 

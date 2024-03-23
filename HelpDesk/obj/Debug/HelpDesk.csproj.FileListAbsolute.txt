@@ -49,6 +49,7 @@ C:\Users\Danil\Desktop\HelpDesk\HelpDesk\obj\Debug\Yslygi.g.cs
 C:\Users\Danil\Desktop\HelpDesk\HelpDesk\obj\Debug\Yslygi.baml
 C:\Users\Danil\Desktop\HelpDesk\HelpDesk\obj\Debug\Cabinet.g.cs
 C:\Users\Danil\Desktop\HelpDesk\HelpDesk\obj\Debug\Cabinet.baml
+<<<<<<< HEAD
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\bin\Debug\HelpDesk.exe.config
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\bin\Debug\HelpDesk.exe
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\bin\Debug\HelpDesk.pdb
@@ -82,3 +83,5 @@ C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\obj\Debug\CreateRequests.g.cs
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\obj\Debug\CreateRequests.baml
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\obj\Debug\PageConsultant.g.cs
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\obj\Debug\PageConsultant.baml
+=======
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58

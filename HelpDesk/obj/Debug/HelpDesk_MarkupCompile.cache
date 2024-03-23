@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\obj\Debug\
+=======
+C:\Users\Danil\Desktop\HelpDesk\HelpDesk\obj\Debug\
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
 HelpDesk
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Danil\Desktop\HelpDesk-master\HelpDesk\App.xaml
 6-535875110
 2-1957146511
 18-2082544074
 18-560834867
 Autification.xaml;Cabinet.xaml;CreateRequests.xaml;MainWindow.xaml;PageConsultant.xaml;Yslygi.xaml;
+=======
+C:\Users\Danil\Desktop\HelpDesk\HelpDesk\App.xaml
+4-177067298
+2-1957146511
+16-1644666898
+18431346665
+Autification.xaml;Cabinet.xaml;MainWindow.xaml;Yslygi.xaml;
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
 
 False
 

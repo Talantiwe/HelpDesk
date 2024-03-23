@@ -60,7 +60,11 @@ namespace HelpDesk
             using (var context = new HelpDeskEntities())
             {
                 var user = context.Пользователь.FirstOrDefault(u => u.Логин == Login.Text && u.Пароль == Password.Password);
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
                 if (user != null)
                 {
                     if (user.Тип_пользователя.Наименование == "Администратор")
@@ -77,9 +81,12 @@ namespace HelpDesk
                     else if (user.Тип_пользователя.Наименование == "Консультант")
                     {
                         MessageBox.Show("Вы вошли как Консультант");
+<<<<<<< HEAD
                         PageConsultant pageConsultant = new PageConsultant();
                         pageConsultant.Show();
                         this.Close();
+=======
+>>>>>>> 29a32eda876879c287a4a4cc66c7db697a210e58
                     }
                 }
                 else
